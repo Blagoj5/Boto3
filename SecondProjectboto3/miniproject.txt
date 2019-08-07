@@ -1,0 +1,6 @@
+Na sekoja minuta crontab na nekoja ec2 instanca, taa instanca sync i zema se od s3 bucketo ( context ), a so lambda kopira nekako do toj s3 bucket na sekoja promena
+
+
+Vaka: koke napravis promena na s3 se trigger lambda, a lambdata executira komanda na ec2 odnosno pravi sync i taka se e up to date!!
+# TREBA DA MU SE DAT PREMISI NA EC2 ZA DA MOZE DA PRistAPuvA do S3
+# IF SSM DOESNT WORK TRY WITH PARAMIKO (import paramiko)
