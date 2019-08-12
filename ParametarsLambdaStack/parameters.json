@@ -1,0 +1,10 @@
+[
+    {
+      "ParameterKey":"KeyName",
+      "ParameterValue":"MyUSE1KP"
+    },
+    {
+       "ParameterKey":"ImageID",
+       "ParameterValue":"ami-0a57edc25c5a0837f"
+    }
+]

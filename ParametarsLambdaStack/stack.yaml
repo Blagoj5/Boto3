@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  KeyName:
+    Description: EC2 Instance Key Pair 
+    Type: AWS::EC2::KeyPair::KeyName
+    NoEcho: True
+  ImageID:
+    Description: The ID of an Image 
+    Type: String
+    NoEcho: True
+  
+Resources:
+  PublicEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: 
+        Ref: KeyName
+      ImageId: !Ref ImageID
+      InstanceType: t2.micro
+      UserData: !Base64 |
+        #!/bin/bash -ex
+        apt-get update -y
+        apt-get upgrade -y
+        apt-get install apache2 -y && service apache2 start
+        cd /var/www/html
+        echo "<html><h1>It's properly working !!!!! </h1></html>" >> index.html
+        echo "template is working and public ip is $Variables" >> testing.html
+      Tags:
+        - Key: Name
+          Value: PublicInstance 
